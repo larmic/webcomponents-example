@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Power consumption</title>
+
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+        WebComponents.waitFor(async () => {
+            // At this point we are guaranteed that all required polyfills have
+            // loaded, and can use web components API's.
+
+            // if browser has no native fetch support -> load polyfill
+            if (!window.fetch) {
+                await import('./node_modules/whatwg-fetch/fetch.js');
+            }
+            return import('./simple-clock.js');
+        })
+    </script>
+</head>
+
+<body>
+
+    <simple-clock></simple-clock>
+
+</body>
+
+</html>

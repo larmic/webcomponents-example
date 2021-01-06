@@ -1,0 +1,9 @@
+{
+  "name": "webcomponents-example",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "whatwg-fetch": "^3.5.0"
+  }
+}
