@@ -1,8 +1,19 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <div class="clock">
-    Hello webcomponents!
+    Waiting for update...
 </div>
+
+<style>
+    :host .clock {
+        border: 2px solid blueviolet;
+        border-radius: 8px;
+        background-color: #FFFFFF;
+        margin: auto;
+        width: 200px;
+        padding: 10px;
+    }
+</style>
 `
 
 class SimpleClock extends HTMLElement {
@@ -27,7 +38,7 @@ class SimpleClock extends HTMLElement {
             //console.log(`${name} changed from ${oldVal} to ${newVal}`)
             switch (name) {
                 case 'current-date-time':
-                    this._shadowRoot.querySelector('.clock').innerHTML = "Hey, it is: " + this.getAttribute('current-date-time');
+                    this._shadowRoot.querySelector('.clock').innerHTML = this.getAttribute('current-date-time');
             }
         }
     }
