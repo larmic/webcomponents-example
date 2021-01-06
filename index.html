@@ -24,7 +24,43 @@
 
 <body>
 
-    <simple-clock></simple-clock>
+<simple-clock></simple-clock>
+
+<script>
+    // start after a few seconds -> show webcomponents default text
+    setTimeout(() => {
+        updateClock();
+    }, 2000);
+
+    // worldclockapi.com is to the minute, so update clock all 60 seconds
+    setInterval(() => {
+        updateClock();
+    }, 60000);
+
+    function updateClock() {
+        fetch('http://worldclockapi.com/api/json/est/now')
+            .then(verifyStatus)
+            .then(response => response.json())
+            .then(updateClockComponent)
+            .catch(log);
+    }
+
+    function verifyStatus(response) {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response;
+    }
+
+    function log(message) {
+        console.log(message)
+    }
+
+    function updateClockComponent(data) {
+        let simpleClock = document.querySelector('simple-clock');
+        simpleClock.setAttribute('current-date-time', data.currentDateTime);
+    }
+</script>
 
 </body>
 
