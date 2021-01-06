@@ -66,6 +66,7 @@
     function updateClockComponent(data) {
         let simpleClock = document.querySelector('simple-clock');
         simpleClock.setAttribute('current-date-time', data.currentDateTime);
+        simpleClock.setAttribute('day-of-the-week', data.dayOfTheWeek);
     }
 </script>
 
