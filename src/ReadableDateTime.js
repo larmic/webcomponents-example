@@ -1,12 +1,11 @@
 class ReadableDateTime {
 
-    static _monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
     constructor(currentDateTime) {
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         this._hours = ('0' + currentDateTime.getUTCHours()).slice(-2);
         this._minutes = ('0' + currentDateTime.getUTCMinutes()).slice(-2);
         this._day = currentDateTime.getUTCDay();
-        this._month = ReadableDateTime._monthNames[currentDateTime.getUTCMonth()];
+        this._month = monthNames[currentDateTime.getUTCMonth()];
         this._year = currentDateTime.getUTCFullYear();
     }
 

@@ -26,7 +26,7 @@ template.innerHTML = `
 </style>
 `
 
-class SimpleClock extends HTMLElement {
+class Clock extends HTMLElement {
 
     static get observedAttributes() {
         return ['current-date-time', 'day-of-the-week'];
@@ -67,4 +67,4 @@ class SimpleClock extends HTMLElement {
     }
 }
 
-customElements.define('simple-clock', SimpleClock);
+customElements.define('simple-clock', Clock);
