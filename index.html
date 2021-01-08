@@ -50,13 +50,13 @@
     }
 
     function updateClockComponent(data) {
-        let simpleClock = document.querySelector('simple-clock');
+        const simpleClock = document.querySelector('simple-clock');
         simpleClock.setAttribute('current-date-time', data.currentDateTime);
         simpleClock.setAttribute('day-of-the-week', data.dayOfTheWeek);
     }
 </script>
 
-<script src="./src/simple-clock.js" type="module"></script>
+<script src="src/simple-clock.js" type="module" crossorigin></script>
 
 </body>
 
