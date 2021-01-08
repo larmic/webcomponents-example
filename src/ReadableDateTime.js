@@ -1,4 +1,4 @@
-export class ReadableDateTime {
+class ReadableDateTime {
 
     static _monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -19,7 +19,9 @@ export class ReadableDateTime {
     }
 }
 
-export function parseReadableDateTime(isoDate) {
+const parseReadableDateTime = isoDate => {
     const currentDateTime = new Date(Date.parse(isoDate));
     return new ReadableDateTime(currentDateTime);
 }
+
+export {parseReadableDateTime}
